@@ -161,15 +161,19 @@ export default function Blog() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-              <span className="text-accent-foreground font-bold text-sm">ARM</span>
-            </div>
+          <div className="flex items-center gap-3">
+            <img src="https://private-us-east-1.manuscdn.com/sessionFile/dY22poh38qSZhLTtv26MI6/sandbox/arm-logo.jpg" alt="ARM Logo" className="h-8 w-auto" />
             <span className="font-bold text-lg">ARM Agency</span>
           </div>
           <div className="flex items-center gap-8">
             <a href="/" className="text-sm hover:text-accent transition-colors">
               Home
+            </a>
+            <a href="/about" className="text-sm hover:text-accent transition-colors">
+              Mission
+            </a>
+            <a href="/leadership" className="text-sm hover:text-accent transition-colors">
+              Leadership
             </a>
             <a href="/blog" className="text-sm text-accent">
               Blog
