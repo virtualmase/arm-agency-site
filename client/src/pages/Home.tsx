@@ -49,6 +49,9 @@ export default function Home() {
             <a href="#leadership" className="text-sm hover:text-accent transition-colors">
               Leadership
             </a>
+            <a href="/blog" className="text-sm hover:text-accent transition-colors">
+              Blog
+            </a>
             <Button variant="default" size="sm">
               Contact Us
             </Button>
