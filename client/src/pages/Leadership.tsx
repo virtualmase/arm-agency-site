@@ -24,7 +24,7 @@ const leaders: LeaderProfile[] = [
     name: "Mason",
     title: "Chief Executive Officer",
     bio: "Mason has spearheaded the firm's strategic expansion, leveraging over two decades of experience to navigate complex global markets. Having innovated sustainable investment frameworks that have since become benchmarks within the industry, he is recognized for utilizing a unique blend of analytical rigor and visionary foresight. Throughout his tenure, Mason has facilitated multi-billion dollar acquisitions, always directing his teams with a commitment to authenticity and character. His record across global finance is a testament to his ability to deliver detailed results while maintaining an extensive focus on long-term value creation.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=700&fit=crop",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/91150550/ugrjWraOGCKcPJhR.png",
     email: "mason@arm-agency.com",
     linkedin: "https://linkedin.com",
   },
@@ -33,7 +33,7 @@ const leaders: LeaderProfile[] = [
     name: "Avery Lane",
     title: "Chief Operating Officer",
     bio: "Avery Lane has directed the operational backbone of the organization, ensuring that every facet of the firm's infrastructure is optimized for peak performance. Known for leveraging a disciplined approach to organizational design, Avery has facilitated a culture of excellence that spans our extensive global offices. She has innovated internal protocols that have spearheaded a new standard for efficiency in the industry. With an ability to translate complex challenges into detailed operational roadmaps, Avery's leadership is defined by her transparency and her unwavering focus on utilizing the firm's collective talent to its highest potential.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=700&fit=crop",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=700&fit=crop",
     email: "avery@arm-agency.com",
     linkedin: "https://linkedin.com",
   },
@@ -42,10 +42,10 @@ const leaders: LeaderProfile[] = [
     name: "John Williams",
     title: "Managing Director, Strategic Partnerships",
     bio: "John Williams has facilitated some of the most significant alliances in the industry, utilizing a deep network and a sophisticated understanding of market dynamics. Having spearheaded the firm's entry into emerging sectors, John is credited with innovated partnership models that prioritize mutual growth and stability. He is known for leveraging his extensive knowledge to secure high-stakes agreements, directing negotiations with a calm, principled authority. John's record across the private equity sector highlights his ability to build lasting trust, consistently utilizing his expertise to bridge the gap between ambitious capital and transformative opportunities.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=700&fit=crop",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=700&fit=crop",
     email: "john@arm-agency.com",
     linkedin: "https://linkedin.com",
-  },
+  }
 ];
 
 export default function Leadership() {
