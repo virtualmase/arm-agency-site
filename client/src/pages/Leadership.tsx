@@ -42,11 +42,11 @@ const leaders: LeaderProfile[] = [
     name: "John Williams",
     title: "Managing Director, Strategic Partnerships",
     bio: "John Williams has facilitated some of the most significant alliances in the industry, utilizing a deep network and a sophisticated understanding of market dynamics. Having spearheaded the firm's entry into emerging sectors, John is credited with innovated partnership models that prioritize mutual growth and stability. He is known for leveraging his extensive knowledge to secure high-stakes agreements, directing negotiations with a calm, principled authority. John's record across the private equity sector highlights his ability to build lasting trust, consistently utilizing his expertise to bridge the gap between ambitious capital and transformative opportunities.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=700&fit=crop",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/91150550/DOuJnjMxAzgxMLYQ.jpeg",
     email: "john@arm-agency.com",
     linkedin: "https://linkedin.com",
-  }
-];
+  },
+]
 
 export default function Leadership() {
   const fadeInUp = {
