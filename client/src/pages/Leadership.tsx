@@ -21,12 +21,12 @@ interface LeaderProfile {
 const leaders: LeaderProfile[] = [
   {
     id: "mason",
-    name: "Mason",
+    name: "Mason Nguyen",
     title: "Chief Executive Officer",
     bio: "Mason has spearheaded the firm's strategic expansion, leveraging over two decades of experience to navigate complex global markets. Having innovated sustainable investment frameworks that have since become benchmarks within the industry, he is recognized for utilizing a unique blend of analytical rigor and visionary foresight. Throughout his tenure, Mason has facilitated multi-billion dollar acquisitions, always directing his teams with a commitment to authenticity and character. His record across global finance is a testament to his ability to deliver detailed results while maintaining an extensive focus on long-term value creation.",
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/91150550/ugrjWraOGCKcPJhR.png",
     email: "mason@arm-agency.com",
-    linkedin: "https://linkedin.com",
+    linkedin: "https://www.linkedin.com/in/mason-nguyen-777302309/",
   },
   {
     id: "avery",
