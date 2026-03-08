@@ -256,9 +256,9 @@ export default function Home() {
           >
             {[
               {
-                name: "Mason",
-                title: "President",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop",
+                name: "Mason Nguyen",
+                title: "Chief Executive Officer",
+                image: "https://files.manuscdn.com/user_upload_by_module/session_file/91150550/ugrjWraOGCKcPJhR.png",
               },
               {
                 name: "Avery Lane",
