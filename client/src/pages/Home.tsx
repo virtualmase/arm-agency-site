@@ -5,9 +5,9 @@ import { useState } from "react";
 
 /**
  * ARM Agency Home Page
- * Design: Dark institutional modernism with cyan/purple accents
- * Typography: Sora (display) + Inter (body)
- * Color: Deep charcoal bg, cyan/purple accents, off-white text
+ * Design: Hudson Yards aesthetic with glassmorphism and architectural grids
+ * Typography: Space Grotesk (headings) + Inter (body)
+ * Color: Hudson dark (#05070a), steel (#1e293b), cyan accents (#38bdf8)
  */
 
 export default function Home() {
@@ -81,8 +81,8 @@ export default function Home() {
             <div className="inline-block mb-6 px-4 py-2 bg-accent/10 border border-accent/30 rounded-lg">
               <span className="text-accent text-sm font-medium">Autonomous Resource Management</span>
             </div>
-            <h1 className="text-6xl font-bold mb-6 leading-tight">
-              Architect AI-Native Systems That Understand
+            <h1 className="text-gradient text-7xl md:text-8xl font-bold mb-6 leading-[0.9]">
+              DIRECTING THE AGENTIC SWARM
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               The Autonomous Resource Management Agency transforms how organizations deploy, monitor, and optimize autonomous systems. We architect infrastructure for the agentic era.
@@ -170,20 +170,20 @@ export default function Home() {
             ].map((service, i) => (
               <motion.div
                 key={i}
-                className="p-8 border border-border rounded-lg hover:border-accent/50 transition-all duration-300 cursor-pointer"
+                className="card-hudson cursor-pointer group"
                 onMouseEnter={() => setHoveredCard(i)}
                 onMouseLeave={() => setHoveredCard(null)}
                 variants={fadeInUp}
               >
                 <div className="mb-4">
                   <service.icon
-                    className={`w-8 h-8 transition-colors duration-300 ${
-                      hoveredCard === i ? "text-accent" : "text-muted-foreground"
+                    className={`w-8 h-8 transition-all duration-300 ${
+                      hoveredCard === i ? "text-accent scale-110" : "text-muted-foreground"
                     }`}
                   />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground">{service.description}</p>
+                <h3 className="text-xl font-bold mb-3 uppercase tracking-tight">{service.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -276,11 +276,11 @@ export default function Home() {
                 className="text-center"
                 variants={fadeInUp}
               >
-                <div className="mb-6 rounded-lg overflow-hidden border border-border h-64">
+                <div className="mb-6 rounded-lg overflow-hidden border border-white/10 h-64 glass-steel group">
                   <img
                     src={leader.image}
                     alt={leader.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{leader.name}</h3>
