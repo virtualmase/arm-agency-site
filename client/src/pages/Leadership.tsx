@@ -33,7 +33,7 @@ const leaders: LeaderProfile[] = [
     name: "Avery Lane",
     title: "Chief Operating Officer",
     bio: "Avery Lane has directed the operational backbone of the organization, ensuring that every facet of the firm's infrastructure is optimized for peak performance. Known for leveraging a disciplined approach to organizational design, Avery has facilitated a culture of excellence that spans our extensive global offices. She has innovated internal protocols that have spearheaded a new standard for efficiency in the industry. With an ability to translate complex challenges into detailed operational roadmaps, Avery's leadership is defined by her transparency and her unwavering focus on utilizing the firm's collective talent to its highest potential.",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/91150550/ckQmhXbkKHIWpCCX.jpeg",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/91150550/HenVFyedgRXqSfEw.jpeg",
     email: "avery@arm-agency.com",
     linkedin: "https://linkedin.com",
   },
@@ -144,11 +144,11 @@ export default function Leadership() {
                 variants={fadeInUp}
               >
                 {/* Image */}
-                <div className={`relative h-96 rounded-lg overflow-hidden border border-border ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
+                <div className={`relative h-96 rounded-lg overflow-hidden border border-white/10 glass-steel group ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
             <img
               src={leader.image}
               alt={leader.name}
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
                 </div>
 
