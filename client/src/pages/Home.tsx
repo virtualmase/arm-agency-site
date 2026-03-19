@@ -262,13 +262,13 @@ export default function Home() {
               },
               {
                 name: "Avery Lane",
-                title: "Founder & Strategy",
-                image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop",
+                title: "Chief Operating Officer",
+                image: "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/91150550/RSDzpsALCQvlnDmX.jpeg?Expires=1804480772&Signature=eD1IA2oRcptdbU-ZA1AXeJIXx0OF2TcTuiKr2uhKfizUX1-9eV4dpofZs2n~ncT4IyN9KhB-KM6jBuT3KkDoHScPeLTVNC82pcoGOCT1z5QmWH97o-2qzwHlw9TLnbBfdGJ61Xn7epJprzRAdpVm1iLqe-ps8WzFEMtWoGKWzve3hv1RTky~lsKvEyEmy-7GMWtYoLgWmwoC35oB9ddVAUFc05tvDkcse1CpN-0JX8ACfJAFJLLK6q5Yib2XOiojRGEoz0OyEVGvW4c3d5UAk~8u2NYuR9QUBxAbJml5vQUfx6BEjON3rs4WDptvuyvYpwkIB206mZs1D~DYc4QyEw__&Key-Pair-Id=K2HSFNDJXOU9YS",
               },
               {
                 name: "John Williams",
-                title: "Chief Investment Officer",
-                image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop",
+                title: "Managing Director, Strategic Partnerships",
+                image: "https://files.manuscdn.com/user_upload_by_module/session_file/91150550/XexQsVuQsoolXSEW.jpeg",
               },
             ].map((leader, i) => (
               <motion.div
