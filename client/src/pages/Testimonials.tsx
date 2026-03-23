@@ -76,9 +76,9 @@ const testimonials: Testimonial[] = [
 
 const caseStudies: CaseStudy[] = [
   {
-    id: "1",
-    title: "Optimizing $500M VC Portfolio",
-    company: "TechVentures Capital",
+    id: "vc-portfolio",
+    title: "Autonomous VC Portfolio Optimization",
+    company: "Venture Capital Partners",
     industry: "Venture Capital",
     challenge: "Managing 200+ portfolio companies with manual processes, leading to delayed decision-making and missed opportunities",
     solution: "Implemented ARM's autonomous resource management system with AI-driven portfolio analytics and real-time monitoring",
@@ -95,9 +95,9 @@ const caseStudies: CaseStudy[] = [
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800https://images.unsplash.com/photo-1460925895917-adf4e565db13?w=800&h=400&fit=croph=400https://images.unsplash.com/photo-1460925895917-adf4e565db13?w=800&h=400&fit=cropfit=crop",
   },
   {
-    id: "2",
-    title: "Real Estate Market Intelligence",
-    company: "Global Real Estate Partners",
+    id: "real-estate",
+    title: "Real Estate Market Intelligence Platform",
+    company: "Global Real Estate Investment Trust",
     industry: "Real Estate",
     challenge: "Manual market analysis across 15 cities was time-consuming and prone to human error, affecting investment decisions",
     solution: "Deployed ARM's digital twin models to analyze real estate markets in real-time across multiple geographies",
@@ -114,9 +114,9 @@ const caseStudies: CaseStudy[] = [
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop",
   },
   {
-    id: "3",
-    title: "Construction Project Optimization",
-    company: "BuildTech Solutions",
+    id: "construction",
+    title: "Construction Supply Chain Optimization",
+    company: "Major Construction & Development Firm",
     industry: "Construction",
     challenge: "Complex multi-site projects with resource allocation inefficiencies leading to delays and cost overruns",
     solution: "Implemented ARM's autonomous resource allocation system with predictive scheduling and real-time optimization",
@@ -328,9 +328,9 @@ export default function Testimonials() {
                     ))}
                   </div>
 
-                  <Button className="gap-2">
+                  <a href={`/case-study/${study.id}`} className="inline-flex items-center gap-2 px-6 py-2 bg-accent hover:bg-accent/90 text-background rounded-lg transition-colors">
                     Read Full Case Study <ArrowRight className="w-4 h-4" />
-                  </Button>
+                  </a>
                 </div>
               </motion.div>
             ))}
