@@ -1,6 +1,7 @@
-import { ArrowLeft, Share2, Twitter, Linkedin, Mail, Calendar, User, Clock } from "lucide-react";
+import { ArrowLeft, Share2, Twitter, Linkedin, Mail, Calendar, User, Clock, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 /**
@@ -25,6 +26,15 @@ interface BlogPost {
   readTime: number;
   image: string;
   tags: string[];
+}
+
+interface Comment {
+  id: string;
+  author: string;
+  email: string;
+  content: string;
+  timestamp: string;
+  avatar: string;
 }
 
 const blogPosts: Record<string, BlogPost> = {
@@ -296,11 +306,52 @@ As carbon pricing becomes more prevalent and environmental regulations tighten, 
   },
 };
 
+const sampleComments: Comment[] = [
+  {
+    id: "1",
+    author: "Alex Johnson",
+    email: "alex@techventures.com",
+    content: "Excellent breakdown of BFT principles. We're implementing similar consensus mechanisms. This article clarified several edge cases we were struggling with.",
+    timestamp: "2 days ago",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+  },
+  {
+    id: "2",
+    author: "Sarah Chen",
+    email: "sarah@buildtech.com",
+    content: "The multi-round consensus explanation was particularly helpful. We're evaluating ARM Agency for our construction resource optimization project.",
+    timestamp: "1 day ago",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+  },
+];
+
 export default function BlogPost() {
   const [location] = useLocation();
   const postId = location.split("/").pop() || "byzantine-fault-tolerance";
   const post = blogPosts[postId] || blogPosts["byzantine-fault-tolerance"];
 
+  
+  const [comments, setComments] = useState<Comment[]>(sampleComments);
+  const [newComment, setNewComment] = useState({ author: "", email: "", content: "" });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleCommentSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (newComment.author && newComment.email && newComment.content) {
+      const comment: Comment = {
+        id: String(comments.length + 1),
+        author: newComment.author,
+        email: newComment.email,
+        content: newComment.content,
+        timestamp: "just now",
+        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop",
+      };
+      setComments([comment, ...comments]);
+      setNewComment({ author: "", email: "", content: "" });
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 3000);
+    }
+  };
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -542,6 +593,115 @@ export default function BlogPost() {
                 </motion.a>
               ))}
           </div>
+        </div>
+      </section>
+
+      {/* Comments Section */}
+      <section className="py-20 border-t border-border">
+        <div className="container max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <h2 className="text-3xl font-bold mb-4">Comments ({comments.length})</h2>
+            <p className="text-muted-foreground">
+              Join the discussion and share your thoughts on autonomous resource management
+            </p>
+          </motion.div>
+
+          {/* Comment Form */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="glass-steel rounded-lg p-8 border border-white/10 mb-12"
+          >
+            <h3 className="font-bold mb-6">Leave a Comment</h3>
+            <form onSubmit={handleCommentSubmit} className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  value={newComment.author}
+                  onChange={(e) => setNewComment({ ...newComment, author: e.target.value })}
+                  className="px-4 py-2 rounded-lg bg-background border border-border focus:border-accent outline-none transition-colors"
+                  required
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  value={newComment.email}
+                  onChange={(e) => setNewComment({ ...newComment, email: e.target.value })}
+                  className="px-4 py-2 rounded-lg bg-background border border-border focus:border-accent outline-none transition-colors"
+                  required
+                />
+              </div>
+              <textarea
+                placeholder="Your Comment"
+                value={newComment.content}
+                onChange={(e) => setNewComment({ ...newComment, content: e.target.value })}
+                className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:border-accent outline-none transition-colors resize-none h-32"
+                required
+              />
+              <div className="flex items-center gap-4">
+                <button
+                  type="submit"
+                  className="inline-flex items-center gap-2 px-6 py-2 bg-accent hover:bg-accent/90 text-background rounded-lg transition-colors"
+                >
+                  <Send className="w-4 h-4" />
+                  Post Comment
+                </button>
+                {submitted && (
+                  <span className="text-accent text-sm">✓ Comment posted successfully!</span>
+                )}
+              </div>
+            </form>
+          </motion.div>
+
+          {/* Comments List */}
+          <motion.div
+            className="space-y-6"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={{
+              initial: { opacity: 0 },
+              animate: {
+                opacity: 1,
+                transition: { staggerChildren: 0.1 },
+              },
+            }}
+          >
+            {comments.map((comment) => (
+              <motion.div
+                key={comment.id}
+                className="glass-steel rounded-lg p-6 border border-white/10"
+                variants={{
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                }}
+              >
+                <div className="flex items-start gap-4">
+                  <img
+                    src={comment.avatar}
+                    alt={comment.author}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <p className="font-bold">{comment.author}</p>
+                      <p className="text-xs text-muted-foreground">{comment.timestamp}</p>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">{comment.content}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
