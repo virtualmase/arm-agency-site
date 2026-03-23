@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import Testimonials from "./pages/Testimonials";
 import FAQ from "./pages/FAQ";
 import CaseStudyDetail from "./pages/CaseStudyDetail";
+import BlogPost from "./pages/BlogPost";
 
 
 function Router() {
@@ -23,6 +24,7 @@ function Router() {
       <Route path={"/blog"} component={Blog} />
       <Route path={"/testimonials"} component={Testimonials} />
       <Route path={"/case-study/:id"} component={CaseStudyDetail} />
+      <Route path={"/blog-post/:id"} component={BlogPost} />
       <Route path={"/faq"} component={FAQ} />
       <Route path={"/contact"} component={Contact} />
       <Route path={"/404"} component={NotFound} />

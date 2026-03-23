@@ -35,13 +35,13 @@ const blogPosts: BlogPost[] = [
     featured: true,
   },
   {
-    id: "2",
-    title: "Building Trust in Autonomous Systems: The Byzantine Fault Tolerance Approach",
-    excerpt: "A technical deep-dive into how multi-model BFT consensus ensures reliability and security in autonomous agent networks, even under adversarial conditions.",
+    id: "byzantine-fault-tolerance",
+    title: "Byzantine Fault Tolerance in Autonomous Agent Networks",
+    excerpt: "Understanding how autonomous systems maintain consensus and reliability in distributed environments with potential adversarial conditions.",
     category: "technical",
     author: "Avery Lane",
     date: "2026-02-18",
-    readTime: 15,
+    readTime: 12,
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800https://images.unsplash.com/photo-1526374965328-7f5ae4e8b08f?w=800&h=400&fit=croph=400https://images.unsplash.com/photo-1526374965328-7f5ae4e8b08f?w=800&h=400&fit=cropfit=crop",
     featured: true,
   },
@@ -56,13 +56,13 @@ const blogPosts: BlogPost[] = [
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800https://images.unsplash.com/photo-1460925895917-adf4e565db13?w=800&h=400&fit=croph=400https://images.unsplash.com/photo-1460925895917-adf4e565db13?w=800&h=400&fit=cropfit=crop",
   },
   {
-    id: "4",
-    title: "Carbon-Aware Scheduling: Sustainable Autonomous Systems",
-    excerpt: "Learn how ARM Agency integrates environmental impact tracking into autonomous workflows, enabling enterprises to meet ESG commitments while optimizing performance.",
+    id: "autonomous-systems-carbon-aware-scheduling",
+    title: "Carbon-Aware Scheduling in Autonomous Systems",
+    excerpt: "How autonomous resource management can reduce carbon footprint while maintaining operational efficiency.",
     category: "insights",
     author: "Mason",
     date: "2026-02-12",
-    readTime: 10,
+    readTime: 8,
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop",
   },
   {
@@ -76,13 +76,13 @@ const blogPosts: BlogPost[] = [
     image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop",
   },
   {
-    id: "6",
-    title: "Agent-to-Agent Communication: The Future of Enterprise Integration",
-    excerpt: "Exploring the A2A protocol stack and how it enables seamless, trustless communication between autonomous agents across organizational boundaries.",
+    id: "digital-twins-resource-optimization",
+    title: "Digital Twins: The Future of Resource Optimization",
+    excerpt: "How digital twin technology enables real-time simulation and optimization of complex resource management scenarios.",
     category: "whitepaper",
     author: "John Williams",
     date: "2026-02-08",
-    readTime: 16,
+    readTime: 10,
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=400&fit=crop",
   },
   {
@@ -223,11 +223,12 @@ export default function Blog() {
               viewport={{ once: true }}
             >
               {featuredPosts.map((post) => (
-                <motion.article
-                  key={post.id}
-                  className="group cursor-pointer"
-                  variants={fadeInUp}
-                >
+                <a href={`/blog-post/${post.id}`}>
+                  <motion.article
+                    key={post.id}
+                    className="group cursor-pointer"
+                    variants={fadeInUp}
+                  >
                   <div className="relative h-64 rounded-lg overflow-hidden border border-border mb-6 group-hover:border-accent/50 transition-all duration-300">
                     <img
                       src={post.image}
@@ -263,7 +264,8 @@ export default function Blog() {
                       {post.readTime} min read
                     </div>
                   </div>
-                </motion.article>
+                  </motion.article>
+                </a>
               ))}
             </motion.div>
           </div>
@@ -326,11 +328,12 @@ export default function Blog() {
               animate="animate"
             >
               {filteredPosts.map((post) => (
-                <motion.article
-                  key={post.id}
-                  className="group cursor-pointer flex flex-col"
-                  variants={fadeInUp}
-                >
+                <a href={`/blog-post/${post.id}`}>
+                  <motion.article
+                    key={post.id}
+                    className="group cursor-pointer flex flex-col"
+                    variants={fadeInUp}
+                  >
                   <div className="relative h-48 rounded-lg overflow-hidden border border-border mb-6 group-hover:border-accent/50 transition-all duration-300">
                     <img
                       src={post.image}
@@ -365,7 +368,8 @@ export default function Blog() {
                       {post.readTime}m
                     </div>
                   </div>
-                </motion.article>
+                  </motion.article>
+                </a>
               ))}
             </motion.div>
           ) : (
