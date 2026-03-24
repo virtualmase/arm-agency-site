@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Shield, Network, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 /**
  * ARM Agency Home Page
@@ -288,6 +289,18 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="py-20 border-t border-border bg-card/30">
+        <div className="container max-w-3xl">
+          <NewsletterSignup
+            title="Stay Ahead of the Curve"
+            subtitle="Get the latest insights on autonomous systems, AI infrastructure, and resource optimization"
+            placeholder="your@company.com"
+            buttonText="Subscribe"
+          />
         </div>
       </section>
 

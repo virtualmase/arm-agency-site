@@ -5,6 +5,7 @@ import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { toast } from "sonner";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 /**
  * ARM Agency Contact Page
@@ -234,6 +235,18 @@ export default function Contact() {
               </Button>
             </form>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Newsletter Signup Section */}
+      <section className="py-20 border-t border-border bg-card/30">
+        <div className="container max-w-3xl">
+          <NewsletterSignup
+            title="Join Our Community"
+            subtitle="Get exclusive insights, case studies, and industry research delivered to your inbox"
+            placeholder="your@email.com"
+            buttonText="Subscribe Now"
+          />
         </div>
       </section>
 

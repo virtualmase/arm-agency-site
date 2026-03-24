@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { ArrowRight, Search, Calendar, User, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useMemo } from "react";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 /**
  * ARM Agency Blog & Resources Page
@@ -384,30 +385,15 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="py-20 border-t border-border bg-card/50">
-        <div className="container text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Get the latest insights on autonomous systems, AI-native architecture, and enterprise transformation
-            </p>
-            <div className="flex gap-3 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="your@email.com"
-                className="bg-background border-border"
-              />
-              <Button className="gap-2">
-                Subscribe <ArrowRight className="w-4 h-4" />
-              </Button>
-            </div>
-          </motion.div>
+      {/* Newsletter Signup */}
+      <section className="py-20 border-t border-border bg-card/30">
+        <div className="container max-w-3xl">
+          <NewsletterSignup
+            title="Never Miss an Insight"
+            subtitle="Subscribe to receive the latest research, case studies, and industry trends from ARM Agency"
+            placeholder="your@company.com"
+            buttonText="Subscribe Now"
+          />
         </div>
       </section>
 
