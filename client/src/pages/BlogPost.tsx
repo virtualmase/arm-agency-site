@@ -1,8 +1,9 @@
-import { ArrowLeft, Share2, Twitter, Linkedin, Mail, Calendar, User, Clock, Send } from "lucide-react";
+import { ArrowLeft, Share2, Twitter, Linkedin, Mail, Calendar, User, Clock, Send, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { getRecommendedArticles } from "@/lib/recommendations";
 
 /**
  * ARM Agency Blog Post Detail Page
@@ -542,7 +543,7 @@ export default function BlogPost() {
         </div>
       </section>
 
-      {/* Related Articles */}
+      {/* AI-Powered Related Articles */}
       <section className="py-20 border-b border-border bg-card/30">
         <div className="container max-w-4xl">
           <motion.div
@@ -552,46 +553,61 @@ export default function BlogPost() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="text-3xl font-bold mb-4">Related Articles</h2>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="flex items-center gap-2">
+                <Zap className="w-5 h-5 text-accent" />
+                <h2 className="text-3xl font-bold">AI-Recommended Articles</h2>
+              </div>
+              <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold">Personalized</span>
+            </div>
             <p className="text-muted-foreground">
-              Explore more insights on autonomous resource management
+              Based on your interests in <span className="text-accent font-semibold">{post.category}</span> and related topics
             </p>
           </motion.div>
 
           <div className="grid grid-cols-2 gap-8">
-            {Object.values(blogPosts)
-              .filter((p) => p.id !== post.id)
-              .slice(0, 2)
-              .map((relatedPost, index) => (
-                <motion.a
-                  key={relatedPost.id}
-                  href={`/blog-post/${relatedPost.id}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group glass-steel rounded-lg overflow-hidden border border-white/10 hover:border-accent/30 transition-all"
-                >
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={relatedPost.image}
-                      alt={relatedPost.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
+            {getRecommendedArticles(post, Object.values(blogPosts), 2).map((relatedPost, index) => (
+              <motion.a
+                key={relatedPost.id}
+                href={`/blog-post/${relatedPost.id}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group glass-steel rounded-lg overflow-hidden border border-white/10 hover:border-accent/30 transition-all"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={relatedPost.image}
+                    alt={relatedPost.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-accent border border-accent/30">
+                    {relatedPost.relevanceScore}% Match
                   </div>
-                  <div className="p-6">
-                    <p className="text-accent text-sm font-semibold mb-2">{relatedPost.category}</p>
-                    <h3 className="font-bold mb-2 group-hover:text-accent transition-colors">
-                      {relatedPost.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-4">{relatedPost.excerpt}</p>
-                    <div className="flex items-center gap-2 text-accent text-sm">
-                      <span>Read More</span>
-                      <ArrowLeft className="w-4 h-4 rotate-180" />
+                </div>
+                <div className="p-6">
+                  <p className="text-accent text-sm font-semibold mb-2">{relatedPost.category}</p>
+                  <h3 className="font-bold mb-2 group-hover:text-accent transition-colors">
+                    {relatedPost.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4">{relatedPost.excerpt}</p>
+                  {relatedPost.matchingTags && relatedPost.matchingTags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {relatedPost.matchingTags.slice(0, 2).map((tag) => (
+                        <span key={tag} className="text-xs px-2 py-1 rounded-full bg-accent/10 text-accent">
+                          {tag}
+                        </span>
+                      ))}
                     </div>
+                  )}
+                  <div className="flex items-center gap-2 text-accent text-sm">
+                    <span>Read More</span>
+                    <ArrowLeft className="w-4 h-4 rotate-180" />
                   </div>
-                </motion.a>
-              ))}
+                </div>
+              </motion.a>
+            ))}
           </div>
         </div>
       </section>
