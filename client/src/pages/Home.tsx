@@ -86,7 +86,7 @@ export default function Home() {
               DIRECTING THE AGENTIC SWARM
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              The Autonomous Resource Management Agency transforms how organizations deploy, monitor, and optimize autonomous systems. We architect infrastructure for the agentic era.
+              ARM Agency transforms how enterprises architect, deploy, and orchestrate autonomous systems at scale. We engineer the infrastructure that powers the next generation of intelligent organizations.
             </p>
             <div className="flex gap-4">
               <Button size="lg" className="gap-2">
@@ -134,9 +134,9 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-4">Core Capabilities</h2>
+            <h2 className="text-4xl font-bold mb-4">Enterprise Capabilities</h2>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              We provide comprehensive infrastructure and services for autonomous resource management
+              Purpose-built infrastructure for autonomous systems that scale with your ambition. From architecture to orchestration, we handle complexity so you can focus on innovation.
             </p>
           </motion.div>
 
@@ -151,22 +151,22 @@ export default function Home() {
               {
                 icon: Network,
                 title: "AI-Native Architecture",
-                description: "Signal-based infrastructure designed for machine-readable systems and autonomous agents",
+                description: "Signal-based infrastructure engineered for machine-readable systems. We architect platforms where autonomous agents operate with precision and trust.",
               },
               {
                 icon: Zap,
-                title: "Agentic Workflows",
-                description: "Syndication and orchestration of autonomous workflows across distributed systems",
+                title: "Agentic Orchestration",
+                description: "Seamless coordination of autonomous workflows across distributed infrastructure. Syndicate, orchestrate, and optimize at enterprise scale.",
               },
               {
                 icon: Shield,
-                title: "Enterprise Security",
-                description: "Multi-layer security with Byzantine Fault Tolerance and mandate chain verification",
+                title: "Enterprise-Grade Security",
+                description: "Multi-layered protection with Byzantine Fault Tolerance, cryptographic verification, and compliance-ready infrastructure for mission-critical systems.",
               },
               {
                 icon: Users,
-                title: "Leadership & Support",
-                description: "Expert guidance from industry veterans in autonomous systems and resource optimization",
+                title: "Strategic Partnership",
+                description: "Dedicated guidance from industry architects and autonomous systems experts. We partner with you to unlock transformative value.",
               },
             ].map((service, i) => (
               <motion.div
@@ -203,10 +203,10 @@ export default function Home() {
             >
               <h2 className="text-4xl font-bold mb-6">About ARM Agency</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Autonomous Resource Management Agency is a premier business administration conglomerate with a product portfolio of generative search optimization, agentic workflow syndication, and educational infrastructure for all entities, institutions, and individuals.
+                We are architects of autonomous infrastructure. ARM Agency partners with enterprises to design, deploy, and optimize systems where intelligent agents operate with precision, autonomy, and trust.
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                We architect brands and systems that AI can read, trust, and amplify. In a world of noise, we make your data resonate as a source of truth.
+                In an era of autonomous systems, we build the foundations that matter. Our infrastructure enables organizations to scale intelligence, automate complexity, and achieve what was previously impossible.
               </p>
               <Button size="lg" variant="default">
                 Learn Our Mission
@@ -244,7 +244,7 @@ export default function Home() {
           >
             <h2 className="text-4xl font-bold mb-4">Leadership</h2>
             <p className="text-lg text-muted-foreground">
-              Architects of trust in an AI-shaped world
+              Visionary architects with decades of experience building autonomous systems and transforming enterprises
             </p>
           </motion.div>
 
@@ -313,9 +313,9 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Infrastructure?</h2>
+            <h2 className="text-4xl font-bold mb-6">Ready to Build Your Autonomous Future?</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join leading enterprises that trust ARM Agency to architect their autonomous systems
+              Partner with ARM Agency to architect the autonomous infrastructure that drives your competitive advantage. Let's build something transformative together.
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" className="gap-2">
